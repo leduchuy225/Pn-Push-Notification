@@ -19,3 +19,4 @@ samples, guidance on mobile development, and a full API reference.
 
 - Error: Unknown Kotlin JVM target: 20
   https://github.com/capacitor-community/admob/issues/263
+  https://stackoverflow.com/questions/79012911/unknown-kotlin-jvm-target-21-flutter-build-error-in-beginner-project
