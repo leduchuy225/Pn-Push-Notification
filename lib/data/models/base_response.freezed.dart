@@ -12,7 +12,7 @@ part of 'base_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 BaseResponseModel<T> _$BaseResponseModelFromJson<T>(
     Map<String, dynamic> json, T Function(Object?) fromJsonT) {
@@ -36,9 +36,13 @@ mixin _$BaseResponseModel<T> {
   @JsonKey(name: 'messageObjects')
   List<dynamic>? get messageObjects => throw _privateConstructorUsedError;
 
+  /// Serializes this BaseResponseModel to a JSON map.
   Map<String, dynamic> toJson(Object? Function(T) toJsonT) =>
       throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BaseResponseModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BaseResponseModelCopyWith<T, BaseResponseModel<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -70,6 +74,8 @@ class _$BaseResponseModelCopyWithImpl<T, $Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BaseResponseModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -115,11 +121,11 @@ class _$BaseResponseModelCopyWithImpl<T, $Res,
 }
 
 /// @nodoc
-abstract class _$$_BaseResponseModelCopyWith<T, $Res>
+abstract class _$$BaseResponseModelImplCopyWith<T, $Res>
     implements $BaseResponseModelCopyWith<T, $Res> {
-  factory _$$_BaseResponseModelCopyWith(_$_BaseResponseModel<T> value,
-          $Res Function(_$_BaseResponseModel<T>) then) =
-      __$$_BaseResponseModelCopyWithImpl<T, $Res>;
+  factory _$$BaseResponseModelImplCopyWith(_$BaseResponseModelImpl<T> value,
+          $Res Function(_$BaseResponseModelImpl<T>) then) =
+      __$$BaseResponseModelImplCopyWithImpl<T, $Res>;
   @override
   @useResult
   $Res call(
@@ -133,13 +139,15 @@ abstract class _$$_BaseResponseModelCopyWith<T, $Res>
 }
 
 /// @nodoc
-class __$$_BaseResponseModelCopyWithImpl<T, $Res>
-    extends _$BaseResponseModelCopyWithImpl<T, $Res, _$_BaseResponseModel<T>>
-    implements _$$_BaseResponseModelCopyWith<T, $Res> {
-  __$$_BaseResponseModelCopyWithImpl(_$_BaseResponseModel<T> _value,
-      $Res Function(_$_BaseResponseModel<T>) _then)
+class __$$BaseResponseModelImplCopyWithImpl<T, $Res>
+    extends _$BaseResponseModelCopyWithImpl<T, $Res, _$BaseResponseModelImpl<T>>
+    implements _$$BaseResponseModelImplCopyWith<T, $Res> {
+  __$$BaseResponseModelImplCopyWithImpl(_$BaseResponseModelImpl<T> _value,
+      $Res Function(_$BaseResponseModelImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of BaseResponseModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -151,7 +159,7 @@ class __$$_BaseResponseModelCopyWithImpl<T, $Res>
     Object? messageFields = freezed,
     Object? messageObjects = freezed,
   }) {
-    return _then(_$_BaseResponseModel<T>(
+    return _then(_$BaseResponseModelImpl<T>(
       object: freezed == object
           ? _value.object
           : object // ignore: cast_nullable_to_non_nullable
@@ -186,8 +194,8 @@ class __$$_BaseResponseModelCopyWithImpl<T, $Res>
 
 /// @nodoc
 @JsonSerializable(genericArgumentFactories: true)
-class _$_BaseResponseModel<T> implements _BaseResponseModel<T> {
-  _$_BaseResponseModel(
+class _$BaseResponseModelImpl<T> implements _BaseResponseModel<T> {
+  _$BaseResponseModelImpl(
       {@JsonKey(name: 'object') this.object,
       @JsonKey(name: 'error') this.error,
       @JsonKey(name: 'status') this.status,
@@ -198,9 +206,9 @@ class _$_BaseResponseModel<T> implements _BaseResponseModel<T> {
       : _messageFields = messageFields,
         _messageObjects = messageObjects;
 
-  factory _$_BaseResponseModel.fromJson(
+  factory _$BaseResponseModelImpl.fromJson(
           Map<String, dynamic> json, T Function(Object?) fromJsonT) =>
-      _$$_BaseResponseModelFromJson(json, fromJsonT);
+      _$$BaseResponseModelImplFromJson(json, fromJsonT);
 
   @override
   @JsonKey(name: 'object')
@@ -245,10 +253,10 @@ class _$_BaseResponseModel<T> implements _BaseResponseModel<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_BaseResponseModel<T> &&
+            other is _$BaseResponseModelImpl<T> &&
             const DeepCollectionEquality().equals(other.object, object) &&
             (identical(other.error, error) || other.error == error) &&
             (identical(other.status, status) || other.status == status) &&
@@ -261,7 +269,7 @@ class _$_BaseResponseModel<T> implements _BaseResponseModel<T> {
                 .equals(other._messageObjects, _messageObjects));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -273,16 +281,19 @@ class _$_BaseResponseModel<T> implements _BaseResponseModel<T> {
       const DeepCollectionEquality().hash(_messageFields),
       const DeepCollectionEquality().hash(_messageObjects));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BaseResponseModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BaseResponseModelCopyWith<T, _$_BaseResponseModel<T>> get copyWith =>
-      __$$_BaseResponseModelCopyWithImpl<T, _$_BaseResponseModel<T>>(
-          this, _$identity);
+  _$$BaseResponseModelImplCopyWith<T, _$BaseResponseModelImpl<T>>
+      get copyWith =>
+          __$$BaseResponseModelImplCopyWithImpl<T, _$BaseResponseModelImpl<T>>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson(Object? Function(T) toJsonT) {
-    return _$$_BaseResponseModelToJson<T>(this, toJsonT);
+    return _$$BaseResponseModelImplToJson<T>(this, toJsonT);
   }
 }
 
@@ -295,11 +306,11 @@ abstract class _BaseResponseModel<T> implements BaseResponseModel<T> {
       @JsonKey(name: 'statusCode') final String? statusCode,
       @JsonKey(name: 'messageFields') final List<dynamic>? messageFields,
       @JsonKey(name: 'messageObjects')
-      final List<dynamic>? messageObjects}) = _$_BaseResponseModel<T>;
+      final List<dynamic>? messageObjects}) = _$BaseResponseModelImpl<T>;
 
   factory _BaseResponseModel.fromJson(
           Map<String, dynamic> json, T Function(Object?) fromJsonT) =
-      _$_BaseResponseModel<T>.fromJson;
+      _$BaseResponseModelImpl<T>.fromJson;
 
   @override
   @JsonKey(name: 'object')
@@ -322,8 +333,11 @@ abstract class _BaseResponseModel<T> implements BaseResponseModel<T> {
   @override
   @JsonKey(name: 'messageObjects')
   List<dynamic>? get messageObjects;
+
+  /// Create a copy of BaseResponseModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_BaseResponseModelCopyWith<T, _$_BaseResponseModel<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BaseResponseModelImplCopyWith<T, _$BaseResponseModelImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

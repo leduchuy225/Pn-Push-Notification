@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pn_push_notification/ui/settings/settings_screen.dart';
 
-import '../ui/login_screen.dart';
-import '../ui/main_screen.dart';
+// import '../ui/login_screen.dart';
+import '../ui/main/main_screen.dart';
 import '../ui/splash_screen.dart';
 
 class MainRouter {
@@ -11,6 +12,7 @@ class MainRouter {
   static const SPLASH = '/';
   static const MAIN = '/main';
   static const LOGIN = '/login';
+  static const SETTING = '/settings';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -24,10 +26,15 @@ class MainRouter {
           settings: settings,
           page: () => const MainScreen(),
         );
-      case LOGIN:
+      // case LOGIN:
+      //   return GetPageRoute(
+      //     settings: settings,
+      //     page: () => const LoginScreen(),
+      //   );
+      case SETTING:
         return GetPageRoute(
           settings: settings,
-          page: () => const LoginScreen(),
+          page: () => const SettingsScreen(),
         );
       default:
         return GetPageRoute(

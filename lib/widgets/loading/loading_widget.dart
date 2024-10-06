@@ -13,7 +13,7 @@ class MyLoading extends StatelessWidget {
     );
   }
 
-  static void hide() {
+  static void dismiss() {
     if (Get.isDialogOpen == false) {
       return;
     }

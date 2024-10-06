@@ -1,0 +1,9 @@
+{
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "Build APK",
+      "command": "fvm flutter build apk"
+    }
+  ]
+}

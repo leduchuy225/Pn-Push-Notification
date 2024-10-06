@@ -1,43 +1,43 @@
 import 'package:flutter/material.dart';
 
 import '../../data/models/widget_interface.dart';
-import 'checkbox_controller.dart';
+import 'switch_controller.dart';
 
-class MyCheckbox extends StatefulWidget {
+class MySwitch extends StatefulWidget {
   final bool value;
-  final String? title;
   final void Function(bool?) onChanged;
-  final MyCheckboxController? controller;
+  final MySwitchController? controller;
 
-  const MyCheckbox({
-    Key? key,
-    this.title,
+  const MySwitch({
+    super.key,
     this.controller,
     this.value = false,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   @override
-  State<MyCheckbox> createState() => _MyCheckboxState();
+  State<MySwitch> createState() => _MySwitchState();
 }
 
-class _MyCheckboxState extends State<MyCheckbox>
-    with Controller<MyCheckboxController> {
+class _MySwitchState extends State<MySwitch>
+    with Controller<MySwitchController> {
   late bool _value;
 
   @override
   void initState() {
     super.initState();
     if (widgetController == null) {
-      localController = MyCheckboxController();
+      localController = MySwitchController();
     }
 
-    mainController.title ??= widget.title;
     mainController.value ??= widget.value;
 
     _value = mainController.value ?? false;
 
     mainController.addListener(() {
+      print('Value $_value');
+      print('Main controller value: ${mainController.value}');
+
       if (_value != mainController.value) {
         setState(() {
           _value = mainController.value ?? false;
@@ -55,16 +55,16 @@ class _MyCheckboxState extends State<MyCheckbox>
 
   @override
   Widget build(BuildContext context) {
-    return CheckboxListTile(
+    return Switch(
       value: _value,
-      enabled: mainController.enable,
-      title: Text(mainController.title ?? ''),
-      onChanged: (value) {
+      // activeColor: Colors.red,
+      onChanged: (bool value) {
+        print('Switch value $value');
         mainController.value = value;
       },
     );
   }
 
   @override
-  MyCheckboxController? get widgetController => widget.controller;
+  MySwitchController? get widgetController => widget.controller;
 }
