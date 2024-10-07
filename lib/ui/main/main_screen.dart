@@ -43,8 +43,8 @@ class _MainScreenState extends State<MainScreen> {
   // we must use static method, to handle in background
   // prevent dart from stripping out this function on release build in Flutter 3.x
   @pragma('vm:entry-point')
-  static void _callback(NotificationEvent evt) {
-    NotificationEventQuery.insert(evt);
+  static Future<void> _callback(NotificationEvent evt) async {
+    await NotificationEventQuery.insert(evt);
 
     print('send evt to ui: $evt');
 

@@ -1,0 +1,20 @@
+10-07 22:45:38.101 27804 27804 D NotificationsListenerService: send event to flutter side immediately!
+10-07 22:45:38.102 27804 27804 D NotificationsListenerService: send notification event: {infoText=null, flags=16, canTap=true, title=Kanji Look Up: Arisu Sakayanagi, subText=4 new messages from 4 chats, uid=10157, showWhen=true, largeIcon=null, package_name=org.telegram.messenger, text=🌸 本日
+10-07 22:45:38.102 27804 27804 D NotificationsListenerService: 
+10-07 22:45:38.102 27804 27804 D NotificationsListenerService: Hiragana
+10-07 22:45:38.102 27804 27804 D NotificationsListenerService: 🏮 ほんじつ
+10-07 22:45:38.102 27804 27804 D NotificationsListenerService: 
+10-07 22:45:38.102 27804 27804 D NotificationsListenerService: Furigana  
+10-07 22:45:38.102 27804 27804 D NotificationsListenerService: 🏮 [ 本日▪️ほん▪️じつ ]
+10-07 22:45:38.102 27804 27804 D NotificationsListenerService: 
+10-07 22:45:38.102 27804 27804 D NotificationsListenerService: Meaning
+10-07 22:45:38.102 27804 27804 D NotificationsListenerService: 🎌 Noun: "Normal" ▪️ Adverb
+10-07 22:45:38.102 27804 27804 D NotificationsListenerService: 🏮 today - this day
+10-07 22:45:38.102 27804 27804 D NotificationsListenerService:   
+10-07 22:45:38.102 27804 27804 D NotificationsListenerService: URL
+10-07 22:45:38.102 27804 27804 D NotificationsListenerService: 🏮 https://www.japandict.com/本日, id=1974684576, _id=a1474eb58c954, isGroup=false, actions=[{semantic=1, inputs=[{label=Reply, key=extra_voice_reply}], id=0, title=Reply}, {semantic=2, inputs=[], id=1, title=Mark as read}], channelId=0channel_groups_b9fad_-2025810879926187858, key=0|org.telegram.messenger|1974684576|null|10157, timestamp=1728315938068}
+10-07 22:45:38.103 27804 27804 W FlutterJNI: Tried to send a platform message to Flutter, but FlutterJNI was detached from native C++. Could not send. Channel: flutter_notification_listener/bg_method. Response ID: 14
+
+
+
+https://github.com/jiusanzhou/flutter_notification_listener/pull/46

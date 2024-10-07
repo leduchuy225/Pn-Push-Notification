@@ -20,7 +20,7 @@
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data android:name="flutterEmbedding" android:value="2" />
 
-        <receiver android:name="im.zoe.labs.flutter_notification_listener.RebootBroadcastReceiver" android:enabled="true">
+        <receiver android:exported="true" android:name="im.zoe.labs.flutter_notification_listener.RebootBroadcastReceiver" android:enabled="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
