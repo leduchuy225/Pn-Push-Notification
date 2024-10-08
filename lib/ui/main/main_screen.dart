@@ -161,9 +161,9 @@ class _MainScreenState extends State<MainScreen> {
           // SliverToBoxAdapter(
           //   child: Column(
           //     children: [
-          //       MySwitch(onChanged: (value) {}),
-          //       MyCheckbox(
-          //         onChanged: (value) {},
+          //       TextButton(
+          //         onPressed: () => throw Exception(),
+          //         child: const Text('Throw Test Exception'),
           //       ),
           //     ],
           //   ),

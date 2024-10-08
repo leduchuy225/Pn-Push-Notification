@@ -1,0 +1,1 @@
+{"flutter":{"platforms":{"android":{"default":{"projectId":"pn-push-notification","appId":"1:526431735174:android:270ea363841a43f4557007","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"pn-push-notification","configurations":{"android":"1:526431735174:android:270ea363841a43f4557007"}}}}}}
