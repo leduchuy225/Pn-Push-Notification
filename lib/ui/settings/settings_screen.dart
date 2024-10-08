@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:installed_apps/app_info.dart';
 import 'package:installed_apps/installed_apps.dart';
+import 'package:open_settings_plus/open_settings_plus.dart';
 import 'package:pn_push_notification/theme/app_theme.dart';
 import 'package:pn_push_notification/widgets/appbar/appbar_widget.dart';
 import 'package:pn_push_notification/widgets/loading/loading_widget.dart';
@@ -15,6 +16,7 @@ class SettingsScreen extends StatefulWidget {
 
 class _SettingsScreenState extends State<SettingsScreen> {
   List<AppInfo> _apps = [];
+  final _androidSettings = const OpenSettingsPlusAndroid();
 
   @override
   void initState() {
@@ -45,6 +47,37 @@ class _SettingsScreenState extends State<SettingsScreen> {
           child: Column(
             children: [
               const SizedBox(height: 12),
+              InkWell(
+                onTap: _androidSettings.appSettings,
+                child: const Card(
+                  margin: EdgeInsets.symmetric(vertical: 6),
+                  child: ListTile(
+                    title: Text('Open appSettings'),
+                    leading: Icon(Icons.settings_applications_rounded),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: _androidSettings.applicationDetails,
+                child: const Card(
+                  margin: EdgeInsets.symmetric(vertical: 6),
+                  child: ListTile(
+                    title: Text('Open applicationDetails'),
+                    leading: Icon(Icons.settings_applications_rounded),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: _androidSettings.applicationSettings,
+                child: const Card(
+                  margin: EdgeInsets.symmetric(vertical: 6),
+                  child: ListTile(
+                    title: Text('Open applicationSettings'),
+                    leading: Icon(Icons.settings_applications_rounded),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12),
               ..._apps.map((app) {
                 return Card(
                   child: ListTile(
@@ -55,6 +88,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                 );
               }).toList(),
+              const SizedBox(height: 12),
             ],
           ),
         ),

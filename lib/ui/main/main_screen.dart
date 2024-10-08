@@ -104,14 +104,16 @@ class _MainScreenState extends State<MainScreen> {
 
     if (!isRunning) {
       await NotificationsListener.startService(
-        foreground: true,
         title: 'Listener Running',
         description: 'Welcome to having me',
-      );
+      ).then((data) {
+        _isStartedNotifier.value = data ?? false;
+      });
+    } else {
+      _isStartedNotifier.value = isRunning;
     }
 
     MyLoading.dismiss();
-    _isStartedNotifier.value = isRunning;
   }
 
   Future<void> stopListening() async {
@@ -158,16 +160,6 @@ class _MainScreenState extends State<MainScreen> {
       ),
       body: CustomScrollView(
         slivers: [
-          // SliverToBoxAdapter(
-          //   child: Column(
-          //     children: [
-          //       TextButton(
-          //         onPressed: () => throw Exception(),
-          //         child: const Text('Throw Test Exception'),
-          //       ),
-          //     ],
-          //   ),
-          // ),
           SliverPadding(
             padding: const EdgeInsets.symmetric(
               horizontal: AppTheme.defaultHorizontal,
