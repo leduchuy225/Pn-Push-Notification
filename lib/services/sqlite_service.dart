@@ -100,7 +100,8 @@ class NotificationEventQuery {
     final db = await SqliteService.database;
 
     // Query the table for all the dogs.
-    final List<Map<String, dynamic>> eventMaps = await db.query(tableName);
+    final List<Map<String, dynamic>> eventMaps =
+        await db.query(tableName, orderBy: '$_timestamp DESC');
 
     // Convert the list of each dog's fields into a list of `Dog` objects.
     // final List<NotificationEvent> results = [];
